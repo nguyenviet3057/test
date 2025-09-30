@@ -4,8 +4,36 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+
+	<style>
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			row-gap: 32px;
+			padding-top: 100px;
+			height: 100vh;
+		}
+		.button {
+			text-decoration: none;
+			background-color: #faa107;
+			width: 200px;
+			height: 48px;
+			border-radius: 8px;
+			color: white;
+			font-size: large;
+			font-weight: bold;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 4px;
+		}
+	</style>
 </head>
 <body>
-	<a href="https://smartviet.com.vn/"><button>Redirect app</button></a>
+	<div class="container">
+		<a class="button" href="laostravel://authorize?authorization_code=UWu1V64EP4IOvMiZ81dhW3N1XhsNMvQdviGkCCpc2Ue_ypOax3eGYcPHGJ_KG5oXHuHFzKyqyGGcc1oy">laostravel://authorize?authorization_code=...</a>
+		<a class="button" href="laostravel://app/home">laostravel://app/home</a>
+	</div>
 </body>
 </html>
