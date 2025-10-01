@@ -11,10 +11,10 @@
 			flex-direction: column;
 			align-items: center;
 			row-gap: 32px;
-			padding-top: 100px;
+			padding-top: 160px;
 			height: 100vh;
 		}
-		.button {
+		.authorize-app {
 			text-decoration: none;
 			background-color: #faa107;
 			width: 200px;
@@ -32,10 +32,18 @@
 </head>
 <body>
 	<div class="container">
-		<a class="button" href="laostravel://authorize?authorization_code=UWu1V64EP4IOvMiZ81dhW3N1XhsNMvQdviGkCCpc2Ue_ypOax3eGYcPHGJ_KG5oXHuHFzKyqyGGcc1oy">laostravel://authorize?authorization_code=...</a>
-		<a class="button" href="laostravel://app/home">laostravel://app/home</a>
-		<a class="button" href="laostravel://app/authorize?authorization_code=UWu1V64EP4IOvMiZ81dhW3N1XhsNMvQdviGkCCpc2Ue_ypOax3eGYcPHGJ_KG5oXHuHFzKyqyGGcc1oy">laostravel://app/authorize?authorization_code=...</a>
-		<a class="button" href="laostravel://authorize">laostravel://authorize</a>
+		<a class="authorize-app" href="laostravel://app">Continue</a>
 	</div>
 </body>
+
+<script>
+	const urlParams = new URLSearchParams(window.location.search);
+	const authorizationCode = urlParams.get('authorization_code');
+	if (authorizationCode) {
+		const link = document.querySelector('a.authorize-app');
+		if (link) {
+			link.href = `laostravel://app/authorize?authorization_code=${encodeURIComponent(authorizationCode)}`;
+		}
+	}
+</script>
 </html>
